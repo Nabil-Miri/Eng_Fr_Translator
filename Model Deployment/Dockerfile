@@ -16,4 +16,4 @@ COPY . ./
 # Run the web server
 EXPOSE 8000
 ENV PYTHONPATH /translator
-CMD python3 /translator/app.py
+CMD python3 /translator/html_test.py

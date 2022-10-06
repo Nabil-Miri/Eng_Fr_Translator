@@ -52,41 +52,6 @@ class EnFrTranslator:
         print(f'Fr Sentence:{translated_sentence}')
         return translated_sentence
 
-    def predict(self, image_url):
-        # load the image
-        img = self.load_image(image_url)
-
-        # predict the class
-        result = self.model.predict(img)
-
-        # return class
-        if result[0] == 0:
-            return "Cat"
-        else:
-            return "Dog"
-
-    # load and prepare the image
-    def load_image(self, image_url):
-        # download image
-        img = self.download_url(image_url, "model/input.jpg")
-        logging.info("Image downloaded from {}".format(image_url))
-
-        # load the image
-        img = load_img("input.jpg", target_size=(224, 224))
-
-        # convert to array
-        img = img_to_array(img)
-
-        # reshape into a single sample with 3 channels
-        img = img.reshape(1, 224, 224, 3)
-
-        return img
-
-    def download_url(self, url, filename):
-        """Download a file from url to filename, with a progress bar."""
-        urlretrieve(url, filename, data=None)
-
-
 def main():
 
     model = EnFrTranslator('model/2BiLSTM.h5')
