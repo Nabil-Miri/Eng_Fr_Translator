@@ -4,7 +4,7 @@ from model import EnFrTranslator
 
 app = Flask(__name__)
 # define model path
-model_path = 'model/2BiLSTM.h5'
+model_path = '2BiLSTM.h5'
 
 # create instance
 model = EnFrTranslator(model_path)

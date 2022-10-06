@@ -54,7 +54,7 @@ class EnFrTranslator:
 
 def main():
 
-    model = EnFrTranslator('model/2BiLSTM.h5')
+    model = EnFrTranslator('2BiLSTM.h5')
     predicted_class = model.translate("She is driving the truck")
     logging.info("This is an image of a {}".format(predicted_class))
 
