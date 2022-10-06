@@ -1,2 +1,4 @@
 Flask==2.0.1
 numpy==1.19.5
+Keras-Preprocessing==1.1.2
+Keras==2.10.0
