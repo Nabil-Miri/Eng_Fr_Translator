@@ -3,8 +3,8 @@ import os
 # hide TF warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras.models import load_model
+from keras_preprocessing.sequence import pad_sequences
 
 from PIL import Image
 from urllib.request import urlretrieve
