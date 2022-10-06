@@ -1,0 +1,8 @@
+```sh
+docker build -t eng-fr-translator/api-server -f Dockerfile .
+
+```sh
+docker run -p8000:8000 -it -rm eng-fr-translator/api-server
+
+```sh
+crul "https://localhost:8000/v1/translate?sen=she is driving the truck"

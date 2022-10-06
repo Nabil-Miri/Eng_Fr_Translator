@@ -1,4 +1,5 @@
 import os
+
 # hide TF warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import tensorflow as tf
@@ -15,13 +16,13 @@ import logging
 import pickle
 import numpy as np
 
+
 class EnFrTranslator:
 
     def __init__(self, model_path):
         logging.info("EnFrTranslator class initialized")
         self.model = load_model(model_path)
         logging.info("Model is loaded!")
-
 
     def get_tokenizers(self):
         # loading
@@ -75,23 +76,25 @@ class EnFrTranslator:
 
         # load the image
         img = load_img("input.jpg", target_size=(224, 224))
-      
+
         # convert to array
         img = img_to_array(img)
-      
+
         # reshape into a single sample with 3 channels
         img = img.reshape(1, 224, 224, 3)
-      
+
         return img
 
     def download_url(self, url, filename):
         """Download a file from url to filename, with a progress bar."""
         urlretrieve(url, filename, data=None)
 
+
 def main():
-	model = EnFrTranslator('model/2BiLSTM.h5')
-	predicted_class = model.translate("She is driving the truck")
-	logging.info("This is an image of a {}".format(predicted_class)) 
+
+    model = EnFrTranslator('model/2BiLSTM.h5')
+    predicted_class = model.translate("She is driving the truck")
+    logging.info("This is an image of a {}".format(predicted_class))
 
 
 if __name__ == "__main__":
