@@ -1,20 +1,11 @@
-import os
 import logging
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from model import EnFrTranslator
 
 app = Flask(__name__)
 # define model path
 model_path = './model/2BiLSTM.h5'
-# @app.route("/", methods=['GET', 'POST'])
-# def index():
-#     if request.method == 'POST':
-#         eng=first_name = request.form.get("en")
-#         if request.form.get('submit') == 'Translate':
-#             pass predict(eng)
-#     elif request.method == 'GET':
-#         return render_template('HTML.html')
-#     return render_template("HTML.html")
+
 # create instance
 model = EnFrTranslator(model_path)
 logging.basicConfig(level=logging.INFO)
