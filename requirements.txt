@@ -3,4 +3,4 @@ gunicorn==20.1.0
 numpy==1.19.5
 Keras-Preprocessing==1.1.2
 Keras==2.10.0
-
+tensorflow-cpu
